@@ -8,6 +8,8 @@ async function readSlnFile(path) {
     await proj.read();
     proj.add('content/testClass.cs');
     await proj.save();
+
+    await sln.save();
 }
 
 readSlnFile('examples/TestSolution/TestSolution.sln');
