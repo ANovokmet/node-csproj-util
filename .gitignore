@@ -1,2 +1,5 @@
 node_modules/
 .vscode
+examples/**/.vs/
+examples/**/obj/
+examples/**/bin/

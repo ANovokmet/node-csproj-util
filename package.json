@@ -1,6 +1,6 @@
 {
   "name": "node-csproj-util",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Edit Visual Studio project files using Node.js",
   "main": "index.js",
   "directories": {

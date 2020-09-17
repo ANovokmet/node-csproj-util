@@ -23,12 +23,22 @@ This library allows you to add files to be included in a .csproj and .sln file. 
 ```
 
 ### Reading from a .proj file
+
+Project in a solution:
 ```javascript
         ...
         const proj = sln.projects[0];
         await proj.read();
         ...
 ```
+Directly loading a project:
+```javascript
+        ...
+        const proj = new Project({ filePath: 'examples/TestSolution/TestProject/TestProject.csproj' });
+        await proj.read();
+        ...
+```
+
 
 ### Adding files to project
 ```javascript
@@ -40,3 +50,14 @@ This library allows you to add files to be included in a .csproj and .sln file. 
         await proj.save();
         ...
 ```
+
+### Adding to solution folders
+```javascript
+        ...
+        // you can create or use an existing one
+        const folder = sln.addFolder('MyFolder');
+        sln.addToFolder(folder, proj);
+        await sln.save();
+        ...
+```
+You can create or use an existing one, since they are not actual folders, get them using the `Solution.projects` property.
