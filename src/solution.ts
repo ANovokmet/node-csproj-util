@@ -1,25 +1,23 @@
 import fs from "fs-extra";
 import path from "path";
-import SlnParser, { GlobalSectionNode, HeaderNode } from "./parser";
+import * as parser from "./parser";
 import Project from "./project";
 
-class Solution {
+export default class Solution {
   path: string;
-  parser: typeof SlnParser;
-  header: HeaderNode | undefined;
+  header: parser.HeaderNode | undefined;
   projects: Project[] = [];
-  global: GlobalSectionNode[] = [];
+  global: parser.GlobalSectionNode[] = [];
 
 
   constructor(path: string) {
     this.path = path;
-    this.parser = SlnParser;
   }
   
-  async read() {
+  async read(): Promise<void> {
     const buffer = await fs.readFile(this.path);
     const lines = buffer.toString().split("\n");
-    const { header, projects, global } = this.parser.read(lines);
+    const { header, projects, global } = parser.read(lines);
 
     this.header = header;
     this.projects = projects.map(
@@ -28,7 +26,7 @@ class Solution {
     this.global = global;
   }
 
-  addProject(project: Project) {
+  addProject(project: Project): void {
     if (!project.projectTypeGuid) {
       const guids = project.getProperty("ProjectTypeGuids").split(";");
       project.projectTypeGuid = guids[guids.length - 1];
@@ -43,9 +41,9 @@ class Solution {
 
     this.projects.push(project);
   }
-  async save() {
+  async save(): Promise<void> {
     if(!this.header) throw new Error('No header Node');
-    const fileContent = this.parser.write({
+    const fileContent = parser.write({
       header: this.header,
       projects: this.projects,
       global: this.global,
@@ -65,7 +63,7 @@ class Solution {
     return slnFolder;
   }
 
-  addToFolder(slnFolder: Project, project: Project) {
+  addToFolder(slnFolder: Project, project: Project): void {
     let globalSection = this.global.find(
       (globalSection) => globalSection.sectionName === "NestedProjects"
     );
@@ -84,7 +82,7 @@ class Solution {
   }
 }
 
-function uuidv4() {
+function uuidv4(): string {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
     const r = (Math.random() * 16) | 0,
       v = c == "x" ? r : (r & 0x3) | 0x8;

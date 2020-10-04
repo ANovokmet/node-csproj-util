@@ -54,7 +54,6 @@ export default class Project {
         }
     }
     
-    //TODO IDK what the property node's type is and it seems like it can really be anything. You would know more about what this can be
     getPropertyNode(key: string): any {
         if(!this.xmlContent) throw new Error('xmlContent is not yet defined. You must use read() first!');
 
