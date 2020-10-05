@@ -1,4 +1,7 @@
-const PROJECT_TYPE_GUIDS = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PROJECT_TYPE_GUIDS = void 0;
+exports.PROJECT_TYPE_GUIDS = {
     '{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}': 'ASP.NET 5',
     '{603C0E0B-DB56-11DC-BE95-000D561079B0}': 'ASP.NET MVC 1',
     '{F85E285D-A4E0-4152-9332-AB1D724D3325}': 'ASP.NET MVC 2',
@@ -20,10 +23,10 @@ const PROJECT_TYPE_GUIDS = {
     '{20D4826A-C6FA-45DB-90F4-C717570B9F32}': 'Legacy (2003) Smart Device (C#)',
     '{CB4CE8C6-1BDB-4DC7-A4D3-65A1999772F8}': 'Legacy (2003) Smart Device (VB.NET)',
     '{b69e3092-b931-443c-abe7-7e7b65f2a37f}': 'Micro Framework',
-    '{F85E285D-A4E0-4152-9332-AB1D724D3325}': 'Model-View-Controller v2 (MVC 2)',
-    '{E53F8FEA-EAE0-44A6-8774-FFD645390401}': 'Model-View-Controller v3 (MVC 3)',
-    '{E3E379DF-F4C6-4180-9B81-6769533ABE47}': 'Model-View-Controller v4 (MVC 4)',
-    '{349C5851-65DF-11DA-9384-00065B846F21}': 'Model-View-Controller v5 (MVC 5)',
+    // '{F85E285D-A4E0-4152-9332-AB1D724D3325}': 'Model-View-Controller v2 (MVC 2)',
+    // '{E53F8FEA-EAE0-44A6-8774-FFD645390401}': 'Model-View-Controller v3 (MVC 3)',
+    // '{E3E379DF-F4C6-4180-9B81-6769533ABE47}': 'Model-View-Controller v4 (MVC 4)',
+    // '{349C5851-65DF-11DA-9384-00065B846F21}': 'Model-View-Controller v5 (MVC 5)',
     '{EFBA0AD7-5A72-4C68-AF49-83D382785DCF}': 'Mono for Android',
     '{6BC8ED88-2882-458C-8E55-DFD12B67127B}': 'MonoTouch',
     '{F5B4F3BC-B597-4E2B-B552-EF5D8A32436F}': 'MonoTouch Binding',
@@ -43,11 +46,11 @@ const PROJECT_TYPE_GUIDS = {
     '{54435603-DBB4-11D2-8724-00A0C9A8B90C}': 'Visual Studio 2015 Installer Project Extension',
     '{A860303F-1F3F-4691-B57E-529FC101A107}': 'Visual Studio Tools for Applications (VSTA)',
     '{BAA0C2D2-18E2-41B9-852F-F413020CAA33}': 'Visual Studio Tools for Office (VSTO)',
-    '{349C5851-65DF-11DA-9384-00065B846F21}': 'Web Application',
+    // '{349C5851-65DF-11DA-9384-00065B846F21}': 'Web Application',
     '{E24C65DC-7377-472B-9ABA-BC803B73C61A}': 'Web Site',
-    '{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}': 'Windows (C#)',
-    '{F184B08F-C81C-45F6-A57F-5ABD9991F28F}': 'Windows (VB.NET)',
-    '{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}': 'Windows (Visual C++)',
+    // '{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}': 'Windows (C#)',
+    // '{F184B08F-C81C-45F6-A57F-5ABD9991F28F}': 'Windows (VB.NET)',
+    // '{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}': 'Windows (Visual C++)',
     '{3D9AD99F-2412-4246-B90B-4EAA41C64699}': 'Windows Communication Foundation (WCF)',
     '{76F1466A-8B6D-4E39-A767-685A06062A39}': 'Windows Phone 8/8.1 Blank/Hub/Webview App',
     '{C089C8C0-30E0-4E22-80C0-CE093F111A43}': 'Windows Phone 8/8.1 App (C#)',
@@ -57,11 +60,9 @@ const PROJECT_TYPE_GUIDS = {
     '{14822709-B5A1-4724-98CA-57A101D1B079}': 'Workflow (C#)',
     '{D59BE175-2ED0-4C54-BE3D-CDAA9F3214C8}': 'Workflow (VB.NET)',
     '{32F31D43-81CC-4C15-9DE6-3FC5453562B6}': 'Workflow Foundation',
-    '{EFBA0AD7-5A72-4C68-AF49-83D382785DCF}': 'Xamarin.Android',
-    '{6BC8ED88-2882-458C-8E55-DFD12B67127B}': 'Xamarin.iOS',
+    // '{EFBA0AD7-5A72-4C68-AF49-83D382785DCF}': 'Xamarin.Android',
+    // '{6BC8ED88-2882-458C-8E55-DFD12B67127B}': 'Xamarin.iOS',
     '{6D335F3A-9D43-41b4-9D22-F6F17C4BE596}': 'XNA (Windows)',
     '{2DF5C3F4-5A5F-47a9-8E94-23B4456F55E2}': 'XNA (XBox)',
     '{D399B71A-8929-442a-A9AC-8BEC78BB2433}': 'XNA (Zune)',
-}
-
-module.exports = { PROJECT_TYPE_GUIDS }
+};
